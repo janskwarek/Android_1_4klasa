@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="label">Exercise 5.0 - JS</string>
-    <string name="gretings">Welcome to my mobile app</string>
+    <string name="label">Cwiczenie 5.0 - JS</string>
+    <string name="gretings">Witaj w mojej aplikacj mobilnej</string>
     <string name="screenOrientation">error</string>
     <string name="number">error</string>
 </resources>
