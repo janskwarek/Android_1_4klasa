@@ -1,3 +1,6 @@
 <resources>
     <string name="label">Cwiczenie 5.0 - JS</string>
+    <string name="greatings">Witaj w mojej aplikacj mobilnej</string>
+    <string name="screenOrientation"></string>
+    <string name="number">5</string>
 </resources>

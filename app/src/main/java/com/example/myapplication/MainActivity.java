@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,30 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
         });
+        checkOrientation();
+        randomNumber();
+    }
+    public void checkOrientation(){
+        TextView screenOrientation = findViewById(R.id.screenOrientation);
+        int orientation = getResources().getConfiguration().orientation;
+
+
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            screenOrientation.setText("Orientacja: PIONOWA");
+        } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            screenOrientation.setText("Orientacja: POZIOMA");
+        } else {
+            screenOrientation.setText("Orientacja: NIEZNANA");
+        }
+
+    }
+    public int randomNumber(){
+        Random random = new Random();
+        int number = random.nextInt(10);
+        TextView numb = findViewById(R.id.number);
+        numb.setText(String.valueOf(number));
+        return 0;
     }
 }
