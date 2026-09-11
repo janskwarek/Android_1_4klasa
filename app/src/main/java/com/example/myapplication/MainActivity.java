@@ -35,19 +35,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            screenOrientation.setText("Orientacja: PIONOWA");
+            screenOrientation.setText("PIONOWA");
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            screenOrientation.setText("Orientacja: POZIOMA");
+            screenOrientation.setText("POZIOMA");
         } else {
-            screenOrientation.setText("Orientacja: NIEZNANA");
+            screenOrientation.setText("NIEZNANA");
         }
 
     }
-    public int randomNumber(){
+    public void randomNumber(){
         Random random = new Random();
         int number = random.nextInt(10);
         TextView numb = findViewById(R.id.number);
         numb.setText(String.valueOf(number));
-        return 0;
     }
 }
