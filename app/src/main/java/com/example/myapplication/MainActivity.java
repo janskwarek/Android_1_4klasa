@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
 
         });
+
+        TextView gretings = findViewById(R.id.gretings);
+        TextView orientation = findViewById(R.id.screenOrientation);
+        TextView number = findViewById(R.id.number);
+
+        int size = getResources().getInteger(R.integer.medium);
+        gretings.setTextSize(size);
+
         checkOrientation();
         randomNumber();
     }
