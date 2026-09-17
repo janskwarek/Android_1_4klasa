@@ -2,6 +2,6 @@
 <resources>
     <string name="label">Exercise 5.0 - JS</string>
     <string name="gretings">Welcome to my mobile app</string>
-    <string name="screenOrientation">error</string>
-    <string name="number">error</string>
+    <string name="screenOrientation">Start app</string>
+    <string name="number">Start app</string>
 </resources>

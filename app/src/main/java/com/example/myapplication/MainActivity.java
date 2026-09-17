@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -10,6 +11,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.intellij.lang.annotations.Language;
+
+import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         TextView gretings = findViewById(R.id.gretings);
         TextView orientation = findViewById(R.id.screenOrientation);
         TextView number = findViewById(R.id.number);
-
         int size = getResources().getInteger(R.integer.medium);
         gretings.setTextSize(size);
 
@@ -40,14 +43,26 @@ public class MainActivity extends AppCompatActivity {
     public void checkOrientation(){
         TextView screenOrientation = findViewById(R.id.screenOrientation);
         int orientation = getResources().getConfiguration().orientation;
-
+        String languageCode = Locale.getDefault().getLanguage();//pobranie jezyku z klasy locale
 
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            screenOrientation.setText("PIONOWA");
+            if(languageCode == "pl"){
+                screenOrientation.setText("Orientacja: Portret");
+            }else{
+                screenOrientation.setText("Orientation: Vertical");
+            }
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            screenOrientation.setText("POZIOMA");
+            if(languageCode == "pl"){
+                screenOrientation.setText("Orientacja: Pejzaż");
+            }else{
+                screenOrientation.setText("Orientation: Horizontal");
+            }
         } else {
-            screenOrientation.setText("NIEZNANA");
+            if(languageCode == "pl"){
+                screenOrientation.setText("Uruchom aplikacje");
+            }else{
+                screenOrientation.setText("Start app to check");
+            }
         }
 
     }

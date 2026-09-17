@@ -2,6 +2,6 @@
 <resources>
     <string name="label">Cwiczenie 5.0 - JS</string>
     <string name="gretings">Witaj w mojej aplikacjq</string>
-    <string name="screenOrientation">error</string>
-    <string name="number">error</string>
+    <string name="screenOrientation">Uruchom aplikacje</string>
+    <string name="number">Uruchom aplikacje</string>
 </resources>
