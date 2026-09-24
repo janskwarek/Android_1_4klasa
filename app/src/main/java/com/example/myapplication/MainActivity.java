@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,9 +9,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.intellij.lang.annotations.Language;
-
-import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,39 +32,17 @@ public class MainActivity extends AppCompatActivity {
         int size = getResources().getInteger(R.integer.medium);
         gretings.setTextSize(size);
 
-        checkOrientation();
-        randomNumber();
+//        checkOrientation();
+//        randomNumber();
     }
-    public void checkOrientation(){
-        TextView screenOrientation = findViewById(R.id.screenOrientation);
-        int orientation = getResources().getConfiguration().orientation;
-        String languageCode = Locale.getDefault().getLanguage();//pobranie jezyku z klasy locale
-
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            if(languageCode == "pl"){
-                screenOrientation.setText("Orientacja: Portret");
-            }else{
-                screenOrientation.setText("Orientation: Vertical");
-            }
-        } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            if(languageCode == "pl"){
-                screenOrientation.setText("Orientacja: Pejzaż");
-            }else{
-                screenOrientation.setText("Orientation: Horizontal");
-            }
-        } else {
-            if(languageCode == "pl"){
-                screenOrientation.setText("Uruchom aplikacje");
-            }else{
-                screenOrientation.setText("Start app to check");
-            }
-        }
-
-    }
-    public void randomNumber(){
-        Random random = new Random();
-        int number = random.nextInt(10);
-        TextView numb = findViewById(R.id.number);
-        numb.setText(String.valueOf(number));
-    }
+//    public void checkOrientation(){
+//        TextView screenOrientation = findViewById(R.id.screenOrientation);
+//        screenOrientation.setText(getString(R.string.screenOrientation));
+//    }
+//    public void randomNumber(){
+//        Random random = new Random();
+//        int number = random.nextInt(10);
+//        TextView numb = findViewById(R.id.number);
+//        numb.setText(String.valueOf(number));
+//    }
 }

@@ -9,55 +9,26 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/gretings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/gretings"
-        android:textColor="@color/red"
-        android:textSize="5sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/screenOrientation"
-        android:textColor="@color/black"
-        android:layout_margin="10dp"
-        android:textSize="30sp"
-        android:id="@+id/screenOrientation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Space
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-    <TextView
+        android:layout_height="match_parent"
+        android:text="Button1"
         android:layout_weight="1"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:foregroundGravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/number"
-        android:textColor="@color/green"
-        android:textSize="30sp"
-        android:layout_margin="10dp"
-        android:id="@+id/number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Space
+        android:background=""
+        />
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:text="Button2"
+        android:layout_weight="1"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Button3"
+        android:layout_weight="1"
+        />
+
 
 </LinearLayout>
