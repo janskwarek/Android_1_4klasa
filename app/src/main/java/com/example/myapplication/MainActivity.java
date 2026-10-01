@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,41 +27,50 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-//        TextView gretings = findViewById(R.id.gretings);
-//        TextView orientation = findViewById(R.id.screenOrientation);
-//        TextView number = findViewById(R.id.number);
-//        int size = getResources().getInteger(R.integer.medium);
-//        gretings.setTextSize(size);
-
-//        checkOrientation();
-        randomNumber();
     }
-//    public void checkOrientation(){
-//        TextView screenOrientation = findViewById(R.id.screenOrientation);
-//        screenOrientation.setText(getString(R.string.screenOrientation));
-//    }
-    public void randomNumber(){
-        TextView rectangle = findViewById(R.id.rectangle);
-        Random random = new Random();
-        int number = random.nextInt(5);
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.wtf("Lifecycle", "onStart");
 
-        rectangle.setText(String.valueOf(number));
-        switch (number){
-            case 0:
-                rectangle.setBackgroundColor(getResources().getColor(R.color.blue));
-                break;
-            case 1:
-                rectangle.setBackgroundColor(getResources().getColor(R.color.yellow));
-                break;
-            case 2:
-                rectangle.setBackgroundColor(getResources().getColor(R.color.green));
-                break;
-            case 3:
-                rectangle.setBackgroundColor(getResources().getColor(R.color.red));
-                break;
-            case 4:
-                rectangle.setBackgroundColor(getResources().getColor(R.color.white));
-                break;
-        }
+    }
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.wtf("Lifecycle", "onRestart");
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.wtf("Lifecycle", "onResume");
+
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.wtf("Lifecycle", "onPause");
+
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.wtf("Lifecycle", "onStop");
+
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.wtf("Lifecycle", "onDestroy");
+
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        Log.i("Lifecycle", "onSaveInstanceState");
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i("Lifecycle", "onRestoreInstanceState");
     }
 }
