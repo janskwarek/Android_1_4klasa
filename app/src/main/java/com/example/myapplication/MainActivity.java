@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -24,16 +25,27 @@ public class MainActivity extends AppCompatActivity {
 
         });
         if (savedInstanceState != null) {
-            rotationsCount = savedInstanceState.getInt("rotations", 0);
+            rotationsHorizontalCount = savedInstanceState.getInt("rotationsHorizontal", 0);
+            rotationsVerticalCount = savedInstanceState.getInt("rotationsVertical", 0);
         }
         TextView text1 = findViewById(R.id.text1);
-        text1.setText(String.valueOf(rotationsCount));
+        TextView text2 = findViewById(R.id.text2);
+        text1.setText(String.valueOf(rotationsHorizontalCount));
+        text2.setText(String.valueOf(rotationsVerticalCount));
     }
-    int rotationsCount = 0;
+    int rotationsVerticalCount = 0;
+    int rotationsHorizontalCount = 0;
     protected void onSaveInstanceState(Bundle outState){
-        rotationsCount++;
-        outState.putInt("rotations", rotationsCount);
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            rotationsHorizontalCount++;
+        } else {
+            rotationsVerticalCount++;
+        }
+        outState.putInt("rotationsHorizontal", rotationsHorizontalCount);
+        outState.putInt("rotationsVertical", rotationsVerticalCount);
         super.onSaveInstanceState(outState);
+
     }
 
 }
