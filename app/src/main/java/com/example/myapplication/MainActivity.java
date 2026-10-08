@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -9,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,51 +23,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
 
         });
-
+        if (savedInstanceState != null) {
+            rotationsCount = savedInstanceState.getInt("rotations", 0);
+        }
+        TextView text1 = findViewById(R.id.text1);
+        text1.setText(String.valueOf(rotationsCount));
     }
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Log.wtf("Lifecycle", "onStart");
-
-    }
-    @Override
-    protected void onRestart(){
-        super.onRestart();
-        Log.wtf("Lifecycle", "onRestart");
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.wtf("Lifecycle", "onResume");
-
-    }
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Log.wtf("Lifecycle", "onPause");
-
-    }
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Log.wtf("Lifecycle", "onStop");
-
-    }
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Log.wtf("Lifecycle", "onDestroy");
-
-    }
-    @Override
+    int rotationsCount = 0;
     protected void onSaveInstanceState(Bundle outState){
+        rotationsCount++;
+        outState.putInt("rotations", rotationsCount);
         super.onSaveInstanceState(outState);
-        Log.i("Lifecycle", "onSaveInstanceState");
     }
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
-        Log.i("Lifecycle", "onRestoreInstanceState");
-    }
+
 }
